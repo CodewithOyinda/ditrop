@@ -1,8 +1,10 @@
+import Hero from "../components/hero/Hero";
 
 
 const Home = () => {
   return (
-    <div>
+    <div className="scroll-smooth">
+        <Hero/>
       <p>HIII</p>
     </div>
   );
