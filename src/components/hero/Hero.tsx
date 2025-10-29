@@ -61,7 +61,7 @@ const Hero = () => {
 
           {/* button actions */}
           <div className="hidden md:flex items-center gap-4 text-[#A30005]">
-            <Button/>
+            <Button size="white"/>
           </div>
 
           {/* Mobile actions */}
