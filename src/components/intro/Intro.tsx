@@ -4,6 +4,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Button from "../buttons/Button";
 import bg from "../../assets/bg-1.png";
+import favicon from "../../assets/Favicon.png";
 
 const Intro = () => {
   const words = ["EARNING", "MOVING", "LIVING"];
@@ -78,6 +79,36 @@ const Intro = () => {
         </div>
 
         <div>{/* You can place an image or illustration here */}</div>
+      </div>
+      <div className="flex gap-3">
+        <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[315px] rounded-[20px]">
+            <img src={favicon} alt="favicon"  className="h-[35px] w-[35px]"/>
+            <div>
+                <p className="text-[10px] sm:text-[12px]">Get affordable digital solutions with</p>
+                <p className="text-[10px] sm:text-[12px] font-[500]">DitropSME</p>
+            </div>
+        </div>
+        <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[300px] rounded-[20px]">
+            <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
+            <div>
+                <p className="text-[10px] sm:text-[12px]">Find verified real estate listings with</p>
+                <p className="text-[10px] sm:text-[12px] font-[500]">DitropREALTY</p>
+            </div>
+        </div>
+        <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[300px] rounded-[20px]">
+            <img src={favicon} alt="favicon" className="h-[35px] w-[35px]"/>
+            <div>
+                <p className="text-[10px] sm:text-[12px]">Go anywhere, anytime with</p>
+                <p className="text-[10px] sm:text-[12px] font-[500]">DitropGO</p>
+            </div>
+        </div>
+        <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[300px] rounded-[20px]">
+            <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
+            <div>
+                <p className="text-[10px] sm:text-[12px]">Order food on demand with</p>
+                <p className="text-[10px] sm:text-[12px] font-[500]">DitropFOOD</p>
+            </div>
+        </div>
       </div>
     </div>
     </div>
