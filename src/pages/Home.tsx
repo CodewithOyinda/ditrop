@@ -1,5 +1,6 @@
 import Hero from "../components/hero/Hero";
 import Intro from "../components/intro/Intro";
+import AppOverview from "../components/overview/AppOverview";
 
 
 const Home = () => {
@@ -7,7 +8,7 @@ const Home = () => {
     <div className="scroll-smooth">
         <Hero/>
         <Intro/>
-      <p>HIII</p>
+        <AppOverview/>
     </div>
   );
 }
