@@ -3,74 +3,133 @@ import sme from "../../assets/SMELogo.png";
 import food from "../../assets/DitropFood-Logo.png";
 import smeimage from "../../assets/SMEImage.png";
 import foodimage from "../../assets/FoodImage-1.png";
-import go from "../../assets/DitropGo-Logo.png";
+import go from "../../assets/DitropRealty-Logo.png";
 import realty from "../../assets/DitropRealty-Logo.png";
 import goImage from "../../assets/GoImage-1.png";
 import realtyImage from "../../assets/RealtyImage-3.png";
 
 const AppOverview = () => {
   return (
-    <div className="relative">
-        <div>
-                <img src={bg} alt="bg" className="w-full sm:h-full" />
+    <div className="relative w-full min-h-screen bg-gray-50 overflow-hidden">
+      {/* Background */}
+      <img
+        src={bg}
+        alt="background"
+        className="absolute top-0 left-0 w-full h-full object-cover "
+      />
+
+      {/* Main Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 py-20">
+        {/* Heading */}
+        <div className="text-center mb-12">
+          <h2 className="font-['DM Sans'] text-[28px] sm:text-[50px] font-[700] text-gray-900">
+            The only app you'll ever need.
+          </h2>
+          <p className="text-[12px] sm:text-[18px] text-gray-600 mt-2">
+            From food and rides to real estate and business tools. <br />
+            Ditrop — your all-in-one app for everyday living.
+          </p>
         </div>
 
-    <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2
-          w-full max-w-6xl pt-20">
-      <p className="font-['DM Sans'] text-[20px] sm:text-[50px] font-[700]">The only app you'll <br/>ever need.</p>
-      <p className="text-[10px] sm:text-[18px] text-gray-500">From food and rides to real estate and business tools.</p>
-      <p className="text-[10px] sm:text-[18px] text-gray-500">Ditrop your all-in-one app for everyday living.</p>
-      <div className="flex mt-5 gap-4">
-         <div className="w-[600px] h-[350px] border-2 border-[#ffffff] bg-[#f2ecff] rounded-[30px] shadow-lg">
-            <img src={sme} alt="sme" className="w-[200px] h-[30px] " />
-            <div className="flex gap-2">
-               <div className="w-[200px] px-5 md:px-5 py-4">
-                 <p>Empowering Your Business</p>
-                 <p>Access affordable digital solutions to <br/> boost your online presence and grow <br/>your brand</p>
-                 <p>Learn more</p>
-               </div>
-               <img src={smeimage} alt="sme" className="w-[300px] h-[300px]"  />
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* SME Card */}
+          <div className="flex flex-col sm:flex-row justify-between items-center bg-[#f2ecff] h-[300px] border border-white rounded-[30px] shadow-lg p-6">
+            <div className="flex-1 space-y-10">
+              <img src={sme} alt="SME" className="w-[150px] sm:w-[200px]" />
+              <div>
+                <p className="text-[14px] sm:text-[18px] font-[700]">
+                  Empowering Your Business
+                </p>
+                <p className="text-gray-700 text-[12px] sm:text-[16px]">
+                  Access affordable digital solutions to boost your online
+                  presence and grow your brand.
+                </p>
+                <p className="text-blue-600 font-medium mt-10 cursor-pointer hover:underline">
+                  Learn more →
+                </p>
+              </div>
             </div>
-         </div>
-         <div className="w-[600px]  h-[350px] border-2 border-[#ffffff] bg-[#fff0ee] rounded-[30px] shadow-lg">
-           <img src={food} alt="food" className="w-[200px] h-[30px] px-2 py-2" />
-           <div className="flex gap-2">
-               <div className="w-[200px] px-5 md:px-5 py-4">
-                 <p>Delicious Eats</p>
-                 <p>Discover local food options, order <br/>your favorite meals and get it <br/>delivered to your doorstep.</p>
-                 <p>Coming soon</p>
-               </div>
-               <img src={foodimage} alt="food" className="w-[300px] h-[300px]" />
+            <img
+              src={smeimage}
+              alt="SME"
+              className="w-[200px] sm:w-[250px] mt-6 sm:mt-0"
+            />
+          </div>
+
+          {/* Food Card */}
+          <div className="flex flex-col sm:flex-row justify-between items-center bg-[#fff0ee] h-[300px] border border-white rounded-[30px] shadow-lg p-6">
+            <div className="flex-1 space-y-10">
+              <img src={food} alt="Food" className="w-[150px] sm:w-[200px]" />
+              <div>
+                <p className="text-[14px] sm:text-[18px] font-[700]">
+                  Delicious Eats
+                </p>
+                <p className="text-gray-700 text-[12px] sm:text-[16px]">
+                  Discover local food options, order your favorite meals, and
+                  get them delivered to your doorstep.
+                </p>
+                <p className="text-gray-500 font-medium mt-10">Coming soon</p>
+              </div>
             </div>
-         </div>
-      </div>
-      <div className="flex mt-5 gap-4">
-         <div className="w-[600px] h-[350px] border-2 border-[#ffffff] bg-[#fff6ea] rounded-[30px] shadow-lg">
-            <img src={go} alt="go" className="w-[200px] h-[30px] " />
-            <div className="flex gap-2">
-               <div className="w-[200px] px-5 md:px-5 py-4">
-                 <p>Ride-Hailing Made Simple</p>
-                 <p>Get safe, reliable, and affordable rides<br/>anytime, anywhere right on your <br/>mobile phone.</p>
-                 <p>Coming Soon</p>
-               </div>
-               <img src={goImage} alt="go" className="w-[300px] h-[300px]"  />
+            <img
+              src={foodimage}
+              alt="Food"
+              className="w-[200px] sm:w-[250px] mt-6 sm:mt-0"
+            />
+          </div>
+
+          {/* Go Card */}
+          <div className="flex flex-col sm:flex-row justify-between items-center bg-[#e5f6f0] h-[300px] border border-white rounded-[30px] shadow-lg p-6">
+            <div className="flex-1 space-y-10">
+              <img src={go} alt="Go" className="w-[150px] sm:w-[200px]" />
+              <div>
+                <p className="text-[14px] sm:text-[18px] font-[700]">
+                  Ride-Hailing Made Simple
+                </p>
+                <p className="text-gray-700 text-[12px] sm:text-[16px]">
+                  Get safe, reliable, and affordable rides anytime, anywhere
+                  right on your mobile phone.
+                </p>
+                <p className="text-gray-500 font-medium mt-10">Coming soon</p>
+              </div>
             </div>
-         </div>
-         <div className="w-[600px]  h-[350px] border-2 border-[#ffffff] bg-[#e5f6f0] rounded-[30px] shadow-lg">
-           <img src={realty} alt="realty" className="w-[200px] h-[30px] px-2 py-2" />
-           <div className="flex gap-2">
-               <div className="w-[200px] px-5 md:px-5 py-4">
-                 <p>Your Gateway to Real Estate</p>
-                 <p>Find verified property listings and<br/>connect with trusted agents all on<br/>the Ditrop app.</p>
-                 <p>Coming soon</p>
-               </div>
-               <img src={realtyImage} alt="realty" className="w-[300px] h-[300px]" />
+            <img
+              src={goImage}
+              alt="Go"
+              className="w-[200px] sm:w-[250px] mt-6 sm:mt-0"
+            />
+          </div>
+
+          {/* Realty Card */}
+          <div className="flex flex-col sm:flex-row justify-between items-center bg-[#fff6ea] h-[300px] border border-white rounded-[30px] shadow-lg p-6">
+            <div className="flex-1 space-y-10">
+              <img
+                src={realty}
+                alt="Realty"
+                className="w-[150px] sm:w-[200px]"
+              />
+              <div>
+                <p className="text-[14px] sm:text-[18px] font-[700]">
+                  Your Gateway to Real Estate
+                </p>
+                <p className="text-gray-700 text-[12px] sm:text-[16px]">
+                  Find verified property listings and connect with trusted
+                  agents all on the Ditrop app.
+                </p>
+                <p className="text-gray-500 font-medium mt-10">Coming soon</p>
+              </div>
             </div>
-         </div>
-      </div>
+            <img
+              src={realtyImage}
+              alt="Realty"
+              className="w-[200px] sm:w-[250px] mt-6 sm:mt-0"
+            />
+          </div>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AppOverview
+export default AppOverview;
