@@ -1,3 +1,4 @@
+import Footer from "../components/footer/Footer";
 import Hero from "../components/hero/Hero";
 import Intro from "../components/intro/Intro";
 import More from "../components/more/More";
@@ -13,6 +14,7 @@ const Home = () => {
         <AppOverview/>
         <Powered/>
         <More/>
+        <Footer/>
     </div>
   );
 }

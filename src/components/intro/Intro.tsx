@@ -19,12 +19,11 @@ const Intro = () => {
   }, [words.length]);
 
   return (
-    <div className="relative">
+    <div className="relative w-full min-h-screen bg-gray-50 overflow-hidden">
         <div>
-        <img src={bg} alt="bg" className="w-full sm:h-full object-cover" />
+        <img src={bg} alt="bg" className="absolute top-0 left-0 w-full h-full object-cover "/>
       </div>
-    <div className="absolute top-1/5 left-1/2 -translate-x-1/2 -translate-y-1/2
-          w-full max-w-6xl pt-20 px-5 md:px-8">
+    <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 py-20">
       <div className="flex items-center">
         <div>
           {/* Top label and link */}
