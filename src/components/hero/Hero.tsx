@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import logo from "../../assets/Logo-ditrop.png";
 import { RiArrowDropDownLine } from "react-icons/ri";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiX } from "react-icons/hi";
 import { IoIosMenu } from "react-icons/io";
 import {
   FaXTwitter,
