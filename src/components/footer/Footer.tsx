@@ -34,7 +34,7 @@ const Footer = () => {
       {/* Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 pt-16 pb-10 text-white">
         {/* Top Row */}
-        <div className="flex flex-wrap justify-between items-start gap-10">
+        <div className="flex sm:flex-row flex-col justify-between items-start gap-10">
           <div>
             <img src={logo} alt="logo" className="w-[150px] mb-3" />
             <p>Revolutionising How You <br />Move, Live, and Earn</p>
@@ -72,7 +72,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Row */}
-        <div className="mt-5 border-b border-white pt-8 pb-15 flex flex-wrap justify-center items-start gap-20">
+        <div className="mt-5 border-b border-white pt-8 pb-15 flex sm:flex-row flex-col justify-center items-start sm:gap-20 gap-10">
           {[
             { country: "Canada", location: "New Brunswick, Canada" },
             { country: "United States", location: "Texas, USA" },
@@ -87,9 +87,9 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="mt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="mt-6 flex flex-col sm:flex-row sm:justify-between sm:items-center items-start gap-4">
             <p>Copyright © 2025, Ditrop Inc.</p>
-            <div className="flex items-center gap-6">
+            <div className="flex flex-col sm:flex-row sm:items-center items-start gap-6">
                 <p>Terms</p>
                 <p>Privacy</p>
             </div>
