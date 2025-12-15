@@ -5,7 +5,7 @@ import smeimage from "../../assets/SMEImage.png";
 import foodimage from "../../assets/FoodImage-1.png";
 import go from "../../assets/DitropRealty-Logo.png";
 import realty from "../../assets/DitropRealty-Logo.png";
-import goImage from "../../assets/GoImage-1.png";
+import goImage from "../../assets/GOImage-1.png";
 import realtyImage from "../../assets/RealtyImage-3.png";
 
 const AppOverview = () => {
