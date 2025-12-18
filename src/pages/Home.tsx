@@ -1,3 +1,4 @@
+import Ditropcard from "../components/ditropcard/Ditropcard";
 import Footer from "../components/footer/Footer";
 import Hero from "../components/hero/Hero";
 import Intro from "../components/intro/Intro";
@@ -14,6 +15,7 @@ const Home = () => {
         <AppOverview/>
         <Powered/>
         <More/>
+        <Ditropcard/>
         <Footer/>
     </div>
   );
