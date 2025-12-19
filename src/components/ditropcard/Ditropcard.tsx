@@ -30,7 +30,7 @@ const Ditropcard = () => {
           {/* ===== SLIDE 1: DITROPGO ===== */}
           <div className="min-w-full flex justify-center">
             <div className="flex flex-row">
-              <div className="bg-[#00A86B] text-white p-10 rounded-l-[30px] h-[300px] w-[300px]">
+              <div className="bg-[#00A86B] text-white p-10 pt-20 rounded-l-[30px] h-[300px] w-[300px]">
                 <img src={ditropgo} alt="ditropgo" className="w-[150px]" />
                 <p className="mt-4">
                   Get safe, reliable, and affordable rides anytime, anywhere.
@@ -38,15 +38,15 @@ const Ditropcard = () => {
               </div>
 
               <div className="bg-white flex flex-row rounded-r-[30px]">
-                <div className="w-[400px] p-5">
-                  <p className="font-[600]">
+                <div className="w-[400px] p-15">
+                  <p className="font-[400] text-[12px] sm:text-[22px]">
                     If it's reachable, we can get you there
                   </p>
                   <p className="mt-2 text-sm">
                     DitropGO is Ditrop’s e-ride service that lets you order car
                     rides directly to your location.
                   </p>
-                  <p className="mt-2 text-sm">
+                  <p className="mt-2 text-sm font-bold pt-6 text-[#0a54ff]">
                     Coming soon to Android and iOS
                   </p>
                 </div>
@@ -63,7 +63,7 @@ const Ditropcard = () => {
           {/* ===== SLIDE 2: DITROPSME ===== */}
           <div className="min-w-full flex justify-center">
             <div className="flex flex-row">
-              <div className="bg-[#7D44FF] text-white p-10 rounded-l-[30px] h-[300px] w-[300px]">
+              <div className="bg-[#7D44FF] text-white p-10 pt-20 rounded-l-[30px] h-[300px] w-[300px]">
                 <img src={ditropsme} alt="ditropSME" className="w-[150px]" />
                 <p className="mt-4">
                   Access affordable digital solutions to boost your online
@@ -72,9 +72,9 @@ const Ditropcard = () => {
               </div>
 
               <div className="bg-white flex flex-row rounded-r-[30px]">
-                <div className="w-[400px] p-5">
-                  <p className="font-[600]">Your business dreams?</p>
-                  <p className="font-[600]">We’ll help build them.</p>
+                <div className="w-[400px] p-15">
+                  <p className="font-[400] text-[12px] sm:text-[22px]">Your business dreams?</p>
+                  <p className="font-[400] text-[12px] sm:text-[22px]">We’ll help build them.</p>
                   <p className="mt-2 text-sm">
                     DitropSME offers affordable digital solutions to boost your
                     online presence and turn your vision into reality.
