@@ -10,11 +10,11 @@ type ButtonProps = {
 };
 
 const base =
-  "text-black sm:rounded-[15px]  rounded-[15px] flex items-center justify-center gap-[5px] font-['Inter'] font-[600] hover:bg-[#800004] transition-colors";
+  "text-black sm:rounded-[20px]  rounded-[15px] flex items-center justify-center gap-[5px] font-['Inter'] font-[600] hover:bg-[#800004] transition-colors";
 
 const sizes = {
-  blue: "sm:h-[30px] h-[20px] w-[90px] sm:w-[150px] sm:text-[14px] text-white bg-[#0a54ff] text-[10px] px-4",
-  white: "sm:h-[30px] border-2 border-[#000000] h-[30px] w-[120px] sm:w-[150px] sm:text-[14px] bg-white text-[10px] px-4",
+  blue: "sm:h-[38px] h-[20px] w-[90px] sm:w-[140px] sm:text-[14px] text-white bg-[#0a54ff] text-[10px] px-4",
+  white: "sm:h-[30px] border-2 border-[#000000] h-[30px] w-[120px] sm:w-[140px] sm:text-[14px] bg-white text-[10px] px-4",
   download: "sm:h-[30px] border-2 border-[#000000] h-[30px] w-[150px] sm:w-[180px] sm:text-[14px] bg-white text-[10px] px-4",
 };
 
@@ -38,8 +38,7 @@ const Button: React.FC<ButtonProps> = ({
       {/* Text */}
       {children ?? defaultLabel}
 
-      {/* Only show arrow for download button */}
-      {size === "download" && <FaArrowRight />}
+      <FaArrowRight />
     </button>
   );
 };
