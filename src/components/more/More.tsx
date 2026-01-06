@@ -65,15 +65,15 @@ const More = () => {
   return (
     <div className="bg-[#E6EEFF] py-12">
       {/* Thumbnail */}
-      <div className="flex justify-center mb-10">
+      <div className="flex justify-center mb-10 mx-4 sm:mx-10">
         <img src={thumbnail} alt="thumbnail" className="rounded-[15px]" />
       </div>
 
       <div className="bg-white mx-4 sm:mx-10 p-6 rounded-[30px]">
-        <p className="text-[14px] sm:text-[24px] font-[700] mt-15">
+        <p className="text-[22px] sm:text-[24px] font-[700] mt-15">
           Latest from our blog
         </p>
-        <p className="text-sm text-gray-600 mb-6 pt-2 w-[450px]">
+        <p className="text-sm text-gray-600 mb-6 pt-2 md:w-[450px] w-[300px]">
           Stay informed and inspired with our latest insights on how Ditrop is transforming everyday life.
         </p>
 
