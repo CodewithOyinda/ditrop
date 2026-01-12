@@ -11,29 +11,52 @@ const Intro = () => {
   const words = ["EARNING", "MOVING", "LIVING"];
   const [index, setIndex] = useState(0);
 
-  // Change word every 2 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % words.length);
     }, 2000);
     return () => clearInterval(interval);
-  }, [words.length]);
+  }, []);
 
   return (
     <div className="relative w-full min-h-screen bg-gray-50 overflow-hidden">
-      <div>
-        <img
-          src={bg}
-          alt="bg"
-          className="absolute top-0 left-0 w-full h-full object-cover "
-        />
-      </div>
-      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-30 py-10">
-        <div className="flex flex-col sm:flex-row items-center justify-center">
-          <div>
-            {/* Top label and link */}
-            <div className="bg-white flex rounded-[20px] w-[380px] items-center gap-2 font-['Inter'] h-[45px]">
-              <p className="bg-[#ff6b56] flex items-center justify-center gap-1 rounded-2xl text-white w-[120px] h-[30px] text-[10px] sm:text-[14px] mx-5">
+      {/* Background */}
+      <img
+        src={bg}
+        alt="background"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+
+      {/* Content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 py-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-10">
+
+          {/* ================= VIDEO (FIRST ON MOBILE) ================= */}
+          <div className="order-1 sm:order-2 w-full sm:w-1/2">
+            <video
+              src={introVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-auto rounded-[20px]"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+
+          {/* ================= TEXT (FIRST ON DESKTOP) ================= */}
+          <div className="order-2 sm:order-1 w-full sm:w-1/2 md:px-15 px-0">
+            {/* Top label */}
+            <div className="bg-white flex rounded-[20px] sm:w-[380px] w-[280px]
+                            items-center gap-2 font-['Inter']
+                            sm:h-[45px] h-[30px]">
+              <p className="bg-[#ff6b56] flex items-center justify-center gap-1
+                            rounded-2xl text-white
+                            sm:w-[120px] w-[70px]
+                            sm:h-[30px] h-[25px]
+                            text-[8px] sm:text-[14px]
+                            sm:mx-5 mx-2">
                 What's New <MdKeyboardArrowRight />
               </p>
               <button className="flex items-center gap-2 text-[10px] sm:text-[14px]">
@@ -46,7 +69,7 @@ const Intro = () => {
               Your all-in-one app for
             </p>
 
-            {/* Animated changing word */}
+            {/* Animated word */}
             <div className="h-[40px] sm:h-[60px] overflow-hidden flex items-center">
               <AnimatePresence mode="wait">
                 <motion.p
@@ -68,84 +91,96 @@ const Intro = () => {
               services all in one place.
             </p>
 
-            {/* Email input and button */}
-            <div className="border border-[#9dbbff] rounded-[20px] mt-4 p-4 w-[300px] sm:w-[500px]">
+            {/* Email box */}
+            <div className="border border-[#9dbbff] rounded-[20px]
+                            mt-4 p-4 w-[300px] sm:w-[500px]">
               <p className="text-[10px] sm:text-[14px] font-[500]">
                 Be the first to get the Ditrop Super app when it launches
               </p>
-              <div className="mt-5">
-                <div className="relative">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="w-full border border-[#9dbbff] rounded-[20px] px-4 pr-[130px] py-3 
-                         focus:outline-none focus:ring-2 focus:ring-[#0a54ff]
-                         bg-[#e6eeff] text-[#5c667b]"
-                  />
 
-                  <div className="absolute right-1 top-1/2 -translate-y-1/2">
-                    <Button size="blue" />
-                  </div>
+              <div className="mt-5 relative">
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  className="w-full border border-[#9dbbff] rounded-[20px]
+                             px-4 pr-[130px] py-3
+                             focus:outline-none focus:ring-2 focus:ring-[#0a54ff]
+                             bg-[#e6eeff] text-[#5c667b]"
+                />
+
+                <div className="absolute right-1 top-1/2 -translate-y-1/2">
+                  <Button size="blue" />
                 </div>
               </div>
             </div>
           </div>
-
-          <div>
-            {/* You can place an image or illustration here */}
-            <video
-              src={introVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-auto rounded-[20px]"
-            >
-              Your browser does not support the video tag.
-            </video>
-          </div>
         </div>
-        <div className="flex gap-3">
-          <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[315px] rounded-[20px]">
-            <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
-            <div>
-              <p className="text-[10px] sm:text-[12px]">
-                Get affordable digital solutions with
-              </p>
-              <p className="text-[10px] sm:text-[12px] font-[500]">DitropSME</p>
-            </div>
-          </div>
-          <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[300px] rounded-[20px]">
-            <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
-            <div>
-              <p className="text-[10px] sm:text-[12px]">
-                Find verified real estate listings with
-              </p>
-              <p className="text-[10px] sm:text-[12px] font-[500]">
-                DitropREALTY
-              </p>
-            </div>
-          </div>
-          <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[300px] rounded-[20px]">
-            <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
-            <div>
-              <p className="text-[10px] sm:text-[12px]">
-                Go anywhere, anytime with
-              </p>
-              <p className="text-[10px] sm:text-[12px] font-[500]">DitropGO</p>
-            </div>
-          </div>
-          <div className="bg-white flex gap-2 px-5 py-1 flex-row h-[50px] w-[300px] rounded-[20px]">
-            <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
-            <div>
-              <p className="text-[10px] sm:text-[12px]">
-                Order food on demand with
-              </p>
-              <p className="text-[10px] sm:text-[12px] font-[500]">
-                DitropFOOD
-              </p>
-            </div>
-          </div>
+
+        {/* ================= FEATURE STRIPS — MOBILE (ANIMATED) ================= */}
+        <div className="sm:hidden overflow-hidden mt-10">
+          <motion.div
+            className="flex gap-4 w-max"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{
+              duration: 25,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+          >
+            {[
+              "DitropSME",
+              "DitropREALTY",
+              "DitropGO",
+              "DitropFOOD",
+              "DitropSME",
+              "DitropREALTY",
+              "DitropGO",
+              "DitropFOOD",
+            ].map((label, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="bg-white flex gap-2 px-5 py-2
+                           h-[50px] min-w-[300px]
+                           rounded-[20px] shadow-sm cursor-pointer"
+              >
+                <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
+                <div>
+                  <p className="text-[10px] text-gray-600">
+                    Experience the power of
+                  </p>
+                  <p className="text-[10px] font-[500]">
+                    {label}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ================= FEATURE STRIPS — DESKTOP (STATIC) ================= */}
+        <div className="hidden sm:flex flex-wrap gap-3 mt-10">
+          {["DitropSME", "DitropREALTY", "DitropGO", "DitropFOOD"].map((label) => (
+            <motion.div
+              key={label}
+              whileHover={{ scale: 1.05 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              className="bg-white flex gap-2 px-5 py-2
+                         h-[50px] w-[280px]
+                         rounded-[20px] shadow-sm cursor-pointer"
+            >
+              <img src={favicon} alt="favicon" className="h-[35px] w-[35px]" />
+              <div>
+                <p className="text-[10px] sm:text-[12px] text-gray-600">
+                  Experience the power of
+                </p>
+                <p className="text-[10px] sm:text-[12px] font-[500]">
+                  {label}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </div>
