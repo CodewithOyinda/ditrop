@@ -10,7 +10,7 @@ type ButtonProps = {
 };
 
 const base =
-  "text-black sm:rounded-[20px]  rounded-[15px] flex items-center justify-center gap-[5px] font-['Inter'] font-[600] hover:bg-[#800004] transition-colors";
+  "text-black sm:rounded-[20px]  rounded-[15px] flex items-center justify-center gap-[5px] font-['Inter'] font-[600] transition-colors";
 
 const sizes = {
   blue: "sm:h-[38px] h-[32px] w-[110px] sm:w-[140px] sm:text-[14px] text-white bg-[#0a54ff] text-[10px] px-4",

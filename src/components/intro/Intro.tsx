@@ -33,17 +33,24 @@ const Intro = () => {
 
           {/* ================= VIDEO (FIRST ON MOBILE) ================= */}
           <div className="order-1 sm:order-2 w-full sm:w-1/2">
-            <video
-              src={introVideo}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-auto rounded-[20px]"
-            >
-              Your browser does not support the video tag.
-            </video>
-          </div>
+  <div
+    className="rounded-[20px] overflow-hidden"
+    style={{
+      backgroundImage: `url(${bg})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <video
+      src={introVideo}
+      autoPlay
+      loop
+      muted
+      playsInline
+      className="w-full h-auto"
+    />
+  </div>
+</div>
 
           {/* ================= TEXT (FIRST ON DESKTOP) ================= */}
           <div className="order-2 sm:order-1 w-full sm:w-1/2 md:px-15 px-0">

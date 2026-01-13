@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import logo from "../../assets/Logo-ditrop.png";
+import rectangle from "../../assets/Rectangle.png";
+
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { HiX } from "react-icons/hi";
 import { IoIosMenu } from "react-icons/io";
@@ -9,7 +12,12 @@ import {
   FaLinkedin,
   FaInstagram,
 } from "react-icons/fa6";
+import { RiBloggerFill } from "react-icons/ri";
+import { MdPlayLesson } from "react-icons/md";
+import { BiSolidBarChartAlt2 } from "react-icons/bi";
+
 import Button from "../buttons/Button";
+import WaitlistModal from "../modals/WaitlistModal";
 
 const socials = [
   { Icon: FaLinkedin, label: "LinkedIn" },
@@ -19,137 +27,164 @@ const socials = [
 ];
 
 const Hero = () => {
-  const [open, setOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [waitlistOpen, setWaitlistOpen] = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
 
-  // Prevent body scroll when sheet is open
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
-    const original = document.body.style.overflow;
-    document.body.style.overflow = open ? "hidden" : original || "";
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (!menuOpen) setResourcesOpen(false);
     return () => {
-      document.body.style.overflow = original;
+      document.body.style.overflow = "";
     };
-  }, [open]);
-
-  // Smooth in-page scroll + close mobile sheet
-  const handleNav = (id: string) => (e: React.MouseEvent) => {
-    e.preventDefault();
-    setOpen(false);
-    setTimeout(() => {
-      document
-        .getElementById(id)
-        ?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 10);
-  };
+  }, [menuOpen]);
 
   return (
     <>
-      {/* HEADER BAR */}
+      {/* ================= HEADER ================= */}
       <header className="sticky top-0 z-40 bg-[#E6EEFF] backdrop-blur border-b border-[#cad5ea]">
         <div className="max-w-6xl h-16 md:h-[92px] px-5 md:px-8 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="inline-flex items-center">
-            <img
-              src={logo}
-              alt="Logo"
-              className="h-[35px] w-auto md:h-[40px]"
-            />
-          </a>
 
-          {/* Desktop nav */}
+          {/* Logo */}
+          <Link to="/" className="inline-flex items-center">
+            <img src={logo} alt="Ditrop Logo" className="h-[35px] md:h-[40px]" />
+          </Link>
+
+          {/* ================= DESKTOP NAV ================= */}
           <nav className="hidden md:flex items-center gap-10 font-['Inter'] text-[16px] font-[500]">
-            <a
-              href="#about"
-              onClick={handleNav("about")}
-              className="hover:text-[#A30005]"
-            >
+
+            {/* About */}
+            <Link to="/about" >
               About Ditrop
-            </a>
-            <a
-              href="#resources"
-              onClick={handleNav("resources")}
-              className="hover:text-[#A30005] flex items-center"
+            </Link>
+
+            {/* Resources (Hover) */}
+            <div
+              className="relative"
+              onMouseEnter={() => setResourcesOpen(true)}
+              onMouseLeave={() => setResourcesOpen(false)}
             >
-              <p>Resources</p>
-              <RiArrowDropDownLine className="text-[22px]" />
-            </a>
-            
+              <button className="flex items-center gap-1">
+                <span>Resources</span>
+                <RiArrowDropDownLine className="text-[22px]" />
+              </button>
+
+              {resourcesOpen && (
+                <div
+                  className="absolute left-1/2 top-full mt-4 -translate-x-1/2
+                             w-[520px] bg-[#F5F8FF] rounded-[24px]
+                             shadow-xl border border-[#E6EEFF]
+                             p-6 flex gap-6 z-50"
+                >
+                  {/* Left */}
+                  <div className="flex flex-col gap-6 flex-1">
+                    <div className="flex items-center gap-4 cursor-pointer">
+                      <div className="w-10 h-10 rounded-xl bg-[#E6EEFF] flex items-center justify-center">
+                        <RiBloggerFill size={26} color="#0a54ff" />
+                      </div>
+                      <p className="font-[500]">Blog</p>
+                    </div>
+
+                    <div className="flex items-center gap-4 cursor-pointer">
+                      <div className="w-10 h-10 rounded-xl bg-[#E6EEFF] flex items-center justify-center">
+                        <MdPlayLesson size={26} color="#0a54ff" />
+                      </div>
+                      <p className="font-[500]">Learn</p>
+                    </div>
+                  </div>
+
+                  {/* Right image */}
+                  <div className="w-[220px] h-[150px] rounded-[18px] overflow-hidden">
+                    <img
+                      src={rectangle}
+                      alt="Resources"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
-          {/* Desktop Button */}
-          <div className="hidden md:flex items-center gap-4 text-[#A30005]">
-            <Button size="white" />
+          {/* Desktop Waitlist */}
+          <div className="hidden md:flex">
+            <Button size="white" onClick={() => setWaitlistOpen(true)} />
           </div>
 
-          {/* Mobile actions */}
-          <div className="flex md:hidden items-center gap-3 ">
-            <Button size="white" />
+          {/* ================= MOBILE ACTIONS ================= */}
+          <div className="flex md:hidden items-center gap-3">
+            <Button size="white" onClick={() => setWaitlistOpen(true)} />
             <button
-              aria-label="Open menu"
-              onClick={() => setOpen(true)}
+              onClick={() => setMenuOpen(true)}
               className="p-2 rounded-md hover:bg-black/5"
             >
-              <IoIosMenu className="text-2xl"/>
-              {/* <HiMenuAlt3 className="text-2xl" /> */}
+              <IoIosMenu className="text-2xl" />
             </button>
           </div>
         </div>
       </header>
 
-      {/* MOBILE SHEET */}
-      {open && (
+      {/* ================= MOBILE MENU ================= */}
+      {menuOpen && (
         <div className="fixed inset-0 z-[9999] md:hidden">
-          {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/40"
-            onClick={() => setOpen(false)}
-            aria-hidden="true"
+            onClick={() => setMenuOpen(false)}
           />
 
-          {/* Sheet */}
-          <aside
-            role="dialog"
-            aria-modal="true"
-            className="absolute right-0 top-0 h-full w-full  bg-[#E6EEFF] shadow-xl p-6 flex flex-col z-10 overflow-y-auto"
-          >
-            <div className="flex items-center justify-between mb-6 border-b border-[#cad5ea] -mx-6 pb-4 px-6">
+          <aside className="absolute right-0 top-0 h-full w-full bg-[#E6EEFF]
+                            shadow-xl p-6 z-10 overflow-y-auto">
 
-              <img
-                src={logo}
-                alt="Logo"
-                className="h-[35px] w-auto"
-              />
-              <Button size="download" />
-              <button
-                aria-label="Close menu"
-                onClick={() => setOpen(false)}
-                className="p-2 rounded-md hover:bg-black/5"
-              >
+            {/* Header */}
+            <div className="flex items-center justify-between border-b border-[#cad5ea] -mx-6 px-6 pb-4">
+              <img src={logo} alt="Ditrop" className="h-[35px]" />
+              <button onClick={() => setMenuOpen(false)}>
                 <HiX className="text-2xl" />
               </button>
             </div>
 
-            <nav className="flex flex-col font-['Inter'] pt-6 text-[13px]  text-[#1a1a1a]">
-              <a href="#about" onClick={handleNav("about")} >
+            {/* Nav */}
+            <nav className="pt-6 flex flex-col text-[14px] gap-5">
+
+              <Link to="/about" onClick={() => setMenuOpen(false)}>
                 About Ditrop
-              </a>
-              <a href="#resources" onClick={handleNav("resources")} className="pt-5">
-                Resources
-              </a>
-              <a href="#help" onClick={handleNav("help")} className="pt-5">
-                Help Center
-              </a>
-              <a href="#connect" onClick={handleNav("connect")} className="pt-5">
-                Connect
-              </a>
-              <div className="flex items-center gap-5 pt-4">
+              </Link>
+
+              {/* Resources Accordion */}
+              <button
+                onClick={() => setResourcesOpen(!resourcesOpen)}
+                className="flex items-center justify-between"
+              >
+                <span>Resources</span>
+                <RiArrowDropDownLine
+                  className={`transition-transform ${
+                    resourcesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+
+              {resourcesOpen && (
+                <div className="bg-[#F5F8FF] rounded-[20px] p-4 space-y-4">
+                  <div className="flex items-center gap-4">
+                    <RiBloggerFill size={22} color="#0a54ff" />
+                    <p>Blog</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <BiSolidBarChartAlt2 size={22} color="#0a54ff" />
+                    <p>Thought Leadership</p>
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <MdPlayLesson size={22} color="#0a54ff" />
+                    <p>Learn</p>
+                  </div>
+                </div>
+              )}
+
+              <div className="flex gap-4 pt-6">
                 {socials.map(({ Icon, label }) => (
-                  <a
-                    key={label}
-                    href="#"
-                    aria-label={label}
-                    className="rounded-full bg-[#dfe9ff] flex items-center justify-center w-9 h-9 md:w-10 md:h-10 transition-transform hover:scale-105"
-                  >
-                    <Icon className="text-[18px]" />
+                  <a key={label} href="#">
+                    <Icon className="text-xl" />
                   </a>
                 ))}
               </div>
@@ -157,6 +192,12 @@ const Hero = () => {
           </aside>
         </div>
       )}
+
+      {/* ================= WAITLIST MODAL ================= */}
+      <WaitlistModal
+        open={waitlistOpen}
+        onClose={() => setWaitlistOpen(false)}
+      />
     </>
   );
 };
