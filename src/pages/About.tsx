@@ -1,10 +1,13 @@
 import Hero from "../components/hero/Hero";
 import Footer from "../components/footer/Footer";
 import about from "../assets/AboutUs-Hero-Image.png";
+import Ceo from "../components/ceo/Ceo";
+import Values from "../components/values/Values";
+import Facts from "../components/facts/Facts";
 
 const About = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-hidden scroll-smooth">
       <Hero />
 
       {/* GRADIENT SECTION */}
@@ -23,12 +26,12 @@ const About = () => {
         <div className="relative z-10">
           <h2 className="font-['DM Sans']
                          text-[28px] sm:text-[50px]
-                         font-[700] text-[#0F172A] space-y-1">
+                         font-[700] text-[#0F172A] leading-[1] ">
             All you need, <br  />
             all in one place.
           </h2>
 
-          <p className="mt-5 text-[12px] sm:text-[18px]
+          <p className="mt-5 text-[12px] sm:text-[20px]
                         text-[#64748B] max-w-xl mx-auto">
             One platform. All your essentials. No hassle.<br/>
             That’s the Ditrop way.
@@ -37,7 +40,9 @@ const About = () => {
           <img src={about} alt="About" className="mx-auto mt-12" />
         </div>
       </section>
-
+       <Ceo/>
+       <Values/>
+       <Facts/>
       <Footer />
     </div>
   );
