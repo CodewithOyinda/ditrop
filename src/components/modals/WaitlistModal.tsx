@@ -3,7 +3,6 @@ import { HiX } from "react-icons/hi";
 import phoneMockup from "../../assets/waitlist.png";
 import Button from "../buttons/Button";
 
-
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -32,20 +31,19 @@ const WaitlistModal = ({ open, onClose }: Props) => {
   return (
     <div className="fixed inset-0 z-[99999] flex items-center justify-center">
       {/* Backdrop */}
-      <div
-        className="absolute inset-0 bg-black/70"
-        onClick={onClose}
-      />
+      <div className="absolute inset-0 bg-black/70" onClick={onClose} />
 
       {/* Modal */}
-      <div className="relative z-10 w-[70%] max-w-4xl
+      <div
+        className="relative z-10 w-[70%] max-w-4xl
                       bg-white rounded-[32px] overflow-hidden
-                      shadow-2xl flex flex-col md:flex-row">
-
+                      shadow-2xl flex flex-col md:flex-row"
+      >
         {/* LEFT (Blue panel) */}
-        <div className="order-2 md:order-1 md:w-[30%]
-                flex items-center justify-center relative">
-
+        <div
+          className="order-2 md:order-1 md:w-[30%]
+                flex items-center justify-center relative"
+        >
           <img
             src={phoneMockup}
             alt="App preview"
@@ -54,8 +52,7 @@ const WaitlistModal = ({ open, onClose }: Props) => {
         </div>
 
         {/* RIGHT (Content) */}
-       <div className="order-1 md:order-2 flex-1 p-8 md:p-10 relative">
-
+        <div className="order-1 md:order-2 flex-1 p-8 md:p-10 relative">
           {/* Close button */}
           <button
             onClick={onClose}
@@ -64,7 +61,6 @@ const WaitlistModal = ({ open, onClose }: Props) => {
           >
             <HiX className="text-2xl" />
           </button>
-
 
           <h2 className="md:text-[30px] text-[20px] font-[600] mt-8 mb-4">
             Ditrop app is launching soon.
@@ -75,19 +71,19 @@ const WaitlistModal = ({ open, onClose }: Props) => {
           </p>
 
           <div className="mt-15 relative">
-                          <input
-                            type="email"
-                            placeholder="Your email"
-                            className="w-full border border-[#9dbbff] rounded-[20px]
+            <input
+              type="email"
+              placeholder="Your email"
+              className="w-full border border-[#9dbbff] rounded-[20px]
                                        px-4 pr-[130px] py-3
                                        focus:outline-none focus:ring-2 focus:ring-[#0a54ff]
                                        bg-[#e6eeff] text-[#5c667b]"
-                          />
-          
-                          <div className="absolute right-1 top-1/2 -translate-y-1/2">
-                            <Button size="blue" />
-                          </div>
-                        </div>
+            />
+
+            <div className="absolute right-1 top-1/2 -translate-y-1/2">
+              <Button size="blue" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

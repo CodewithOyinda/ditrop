@@ -83,7 +83,7 @@ const Hero = () => {
                       <div className="w-10 h-10 rounded-xl bg-[#E6EEFF] flex items-center justify-center">
                         <RiBloggerFill size={26} color="#0a54ff" />
                       </div>
-                      <p className="font-[500]">Blog</p>
+                      <Link to="/blog">Blog</Link>
                     </div>
 
                     <div className="flex items-center gap-4 cursor-pointer">
