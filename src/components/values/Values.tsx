@@ -8,7 +8,7 @@ const Values = () => {
         <img
           src={bg}
           alt="background"
-          className="absolute inset-0 w-full h-full object-cover px-5 sm:px-5 rounded-[40px]"
+          className="absolute inset-0 w-full  object-cover px-5 sm:px-5 rounded-[40px]"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 py-5">
           <div className="flex gap-2">
