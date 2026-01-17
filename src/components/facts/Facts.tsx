@@ -61,7 +61,7 @@ const Facts = () => {
         <img
           src={road}
           alt="Road"
-          className="w-full max-w-7xl mx-auto rounded-[20px]"
+          className="w-full sm:h-full h-[500px] max-w-7xl mx-auto rounded-[20px]"
         />
 
         {/* TEXT OVERLAY */}

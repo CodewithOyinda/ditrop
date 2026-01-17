@@ -11,9 +11,9 @@ const Values = () => {
           className="absolute inset-0 w-full  object-cover px-5 sm:px-5 rounded-[40px]"
         />
         <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 py-5">
-          <div className="flex gap-2">
+          <div className="flex sm:flex-row flex-col gap-2">
             <img src={road} alt="road" className="h-[350px] w-[400px]" />
-            <div className="bg-[#ffffff] px-5 rounded-[20px] w-[700px]">
+            <div className="bg-[#ffffff] px-5 rounded-[20px] sm:w-[700px] w-[350px]">
               <p className="sm:text-[22px] text-[18px] font-[700] pt-7">
                 Our Mission
               </p>
@@ -42,15 +42,15 @@ const Values = () => {
             <p className="sm:text-[22px] text-[18px] font-[700] mb-8">
               Our Core Values
             </p>
-            <div className="flex gap-2">
-              <div className="w-[400px]">
+            <div className="flex sm:flex-row flex-col gap-2">
+              <div className="sm:w-[400px] w-[350px]">
                 <p className="sm:text-[16px] text-[12px] pt-5">
                   Our values are the compass that guide how we build, serve, and
                   grow. They reflect what we stand for and how we show up for
                   the people and communities we serve.
                 </p>
               </div>
-              <div className="bg-[#e5f6f0] border-1 border-[#ffff] rounded-[20px] px-5 w-[400px]">
+              <div className="bg-[#e5f6f0] border-1 border-[#ffff] rounded-[20px] px-5 sm:w-[400px] w-[350px]">
                 <p className="sm:text-[16px] text-[12px] pt-5 font-bold">
                   People First
                 </p>
@@ -59,7 +59,7 @@ const Values = () => {
                   every solution we offer.
                 </p>
               </div>
-              <div className="bg-[#fff0ee] border-1 border-[#ffff] rounded-[20px] px-5 w-[400px]">
+              <div className="bg-[#fff0ee] border-1 border-[#ffff] rounded-[20px] px-5 sm:w-[400px] w-[350px]">
                 <p className="sm:text-[16px] text-[12px] pt-5 font-bold">
                   Sustainability
                 </p>
@@ -69,8 +69,8 @@ const Values = () => {
                 </p>
               </div>
             </div>
-             <div className="flex gap-2 mt-10">
-              <div className="bg-[#fff6ea] border-1 border-[#ffff] rounded-[20px] px-5 w-[400px]">
+             <div className="flex sm:flex-row flex-col gap-2 mt-10">
+              <div className="bg-[#fff6ea] border-1 border-[#ffff] rounded-[20px] px-5 sm:w-[400px] w-[350px]">
                 <p className="sm:text-[16px] text-[12px] pt-5 font-bold">
                   Innovation with Purpose
                 </p>
@@ -78,7 +78,7 @@ const Values = () => {
                  We don’t just create. We create to solve problems.
                 </p>
               </div>
-              <div className="bg-[#f2ecff] border-1 border-[#ffff] rounded-[20px] px-5 w-[400px]">
+              <div className="bg-[#f2ecff] border-1 border-[#ffff] rounded-[20px] px-5 sm:w-[400px] w-[350px]">
                 <p className="sm:text-[16px] text-[12px] pt-5 font-bold">
                  Accessibility
                 </p>
@@ -86,7 +86,7 @@ const Values = () => {
                   We believe essential services should be within reach for everyone, not just a few.
                 </p>
               </div>
-              <div className="bg-[#e5f6f0] border-1 border-[#ffff] rounded-[20px] px-5 w-[400px]">
+              <div className="bg-[#e5f6f0] border-1 border-[#ffff] rounded-[20px] px-5 sm:w-[400px] w-[350px]">
                 <p className="sm:text-[16px] text-[12px] pt-5 font-bold">
                   Integrity
                 </p>

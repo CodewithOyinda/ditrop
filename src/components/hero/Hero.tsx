@@ -154,13 +154,14 @@ const Hero = () => {
               {/* Resources Accordion */}
               <button
                 onClick={() => setResourcesOpen(!resourcesOpen)}
-                className="flex items-center justify-between"
+                className="flex items-center"
               >
                 <span>Resources</span>
                 <RiArrowDropDownLine
                   className={`transition-transform ${
                     resourcesOpen ? "rotate-180" : ""
                   }`}
+                  size={22}
                 />
               </button>
 
@@ -168,7 +169,7 @@ const Hero = () => {
                 <div className="bg-[#F5F8FF] rounded-[20px] p-4 space-y-4">
                   <div className="flex items-center gap-4">
                     <RiBloggerFill size={22} color="#0a54ff" />
-                    <p>Blog</p>
+                     <Link to="/blog">Blog</Link>
                   </div>
                   <div className="flex items-center gap-4">
                     <BiSolidBarChartAlt2 size={22} color="#0a54ff" />
@@ -180,7 +181,12 @@ const Hero = () => {
                   </div>
                 </div>
               )}
-
+               <Link to="" onClick={() => setMenuOpen(false)}>
+                Health Center
+              </Link>
+              <Link to="/about" onClick={() => setMenuOpen(false)}>
+                Connect
+              </Link>
               <div className="flex gap-4 pt-6">
                 {socials.map(({ Icon, label }) => (
                   <a key={label} href="#">
