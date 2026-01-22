@@ -11,11 +11,11 @@ const Facts = () => {
   return (
     <div className="bg-[#F5F8FF] py-20 overflow-hidden">
       {/* ================= FUN FACTS HEADER ================= */}
-      <p className="sm:text-[20px] text-[16px] font-[600] mb-3 mx-5">
+      <p className="sm:text-[20px] text-[16px] font-[600] mx-5">
         FUN FACTS
       </p>
 
-      <p className="sm:text-[22px] text-[18px] font-[700] mb-8 mx-5">
+      <p className="sm:text-[30px] text-[18px] font-[700] mb-8 mx-5">
         Did you know?
       </p>
 
