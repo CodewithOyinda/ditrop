@@ -1,8 +1,12 @@
 import Subscribe from "../components/subscribe/Subscribe";
 import Updates from "../components/updates/Updates";
+import Footer from "../components/footer/Footer";
+import Hero from "../components/hero/Hero";
 
 const Blog = () => {
   return (
+    <>
+    <Hero />
     <div className="bg-[#F5F8FF]">
       <h2
         className="font-['DM Sans']
@@ -22,6 +26,8 @@ const Blog = () => {
       <Updates />
       <Subscribe/>
     </div>
+    <Footer />
+    </>
   );
 };
 

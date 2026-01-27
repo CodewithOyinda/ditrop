@@ -7,8 +7,10 @@ import Facts from "../components/facts/Facts";
 
 const About = () => {
   return (
+    <>
+    <Hero />
     <div className="relative min-h-screen overflow-hidden scroll-smooth">
-      <Hero />
+      
 
       {/* GRADIENT SECTION */}
       <section className="relative bg-gradient-to-b
@@ -43,8 +45,10 @@ const About = () => {
        <Ceo/>
        <Values/>
        <Facts/>
-      <Footer />
+      
     </div>
+    <Footer />
+    </>
   );
 };
 
