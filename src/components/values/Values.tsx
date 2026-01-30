@@ -1,10 +1,17 @@
+import { useEffect } from "react";
 import bg from "../../assets/bg-1.png";
 import road from "../../assets/Road.png";
+// @ts-ignore
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Values = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   return (
     <div className="relative bg-[#F5F8FF] py-10 px-5 sm:px-10 overflow-hidden">
-      
       {/* BACKGROUND IMAGE */}
       <img
         src={bg}
@@ -14,10 +21,11 @@ const Values = () => {
 
       {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-0 sm:px-5">
-
         {/* ================= MISSION / VISION ================= */}
-        <div className="flex flex-col sm:flex-row gap-6 items-start">
-          
+        <div
+          className="flex flex-col sm:flex-row gap-6 items-start"
+          data-aos="fade-down"
+        >
           {/* IMAGE */}
           <img
             src={road}
@@ -32,8 +40,8 @@ const Values = () => {
             </p>
             <p className="sm:text-[16px] text-[12px] pt-5 leading-[2]">
               To simplify everyday life by building a unified platform that
-              delivers essential services from mobility and food to housing
-              and business tools in one seamless experience. At Ditrop, we’re
+              delivers essential services from mobility and food to housing and
+              business tools in one seamless experience. At Ditrop, we’re
               committed to creating smart, accessible, and reliable solutions
               that help people live, work, and grow with ease.
             </p>
@@ -43,9 +51,9 @@ const Values = () => {
             </p>
             <p className="sm:text-[16px] text-[12px] pt-5 pb-5 leading-[2]">
               To redefine the everyday living where people can get to access
-              what they need, when they need it, all in one place. We envision
-              a world where convenience isn’t a luxury, but a standard powered
-              by technology, driven by purpose, and built for everyone.
+              what they need, when they need it, all in one place. We envision a
+              world where convenience isn’t a luxury, but a standard powered by
+              technology, driven by purpose, and built for everyone.
             </p>
           </div>
         </div>
@@ -64,8 +72,8 @@ const Values = () => {
             <div className="w-full sm:max-w-[400px]">
               <p className="sm:text-[16px] text-[12px] pt-5">
                 Our values are the compass that guide how we build, serve, and
-                grow. They reflect what we stand for and how we show up for
-                the people and communities we serve.
+                grow. They reflect what we stand for and how we show up for the
+                people and communities we serve.
               </p>
             </div>
 
@@ -74,8 +82,8 @@ const Values = () => {
                 People First
               </p>
               <p className="sm:text-[16px] text-[12px] pt-5 pb-6">
-                We design for real needs, putting people at the center of
-                every solution we offer.
+                We design for real needs, putting people at the center of every
+                solution we offer.
               </p>
             </div>
 
@@ -106,7 +114,8 @@ const Values = () => {
                 Accessibility
               </p>
               <p className="sm:text-[16px] text-[12px] pt-5 pb-6">
-                We believe essential services should be within reach for everyone, not just a few.
+                We believe essential services should be within reach for
+                everyone, not just a few.
               </p>
             </div>
 
@@ -115,12 +124,12 @@ const Values = () => {
                 Integrity
               </p>
               <p className="sm:text-[16px] text-[12px] pt-5 pb-6">
-                We lead with transparency, honesty, and a deep sense of responsibility.
+                We lead with transparency, honesty, and a deep sense of
+                responsibility.
               </p>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );
