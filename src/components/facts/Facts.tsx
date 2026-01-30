@@ -1,7 +1,15 @@
+import { useEffect } from "react";
 import road from "../../assets/Trees.png";
 import Button from "../buttons/Button";
+// @ts-ignore
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Facts = () => {
+  useEffect(() => {
+    AOS.init({ duration: 2000 });
+  }, []);
+
   const facts = [
     "At Ditrop, we call ourselves “Ditrop Marines” because getting things done with purpose is basically our thing.",
     "That little curve in our logo is actually a smile. A reminder that no matter how advanced our solutions get, people will always come first.",
@@ -11,9 +19,7 @@ const Facts = () => {
   return (
     <div className="bg-[#F5F8FF] py-20 overflow-hidden">
       {/* ================= FUN FACTS HEADER ================= */}
-      <p className="sm:text-[20px] text-[16px] font-[600] mx-5">
-        FUN FACTS
-      </p>
+      <p className="sm:text-[20px] text-[16px] font-[600] mx-5">FUN FACTS</p>
 
       <p className="sm:text-[30px] text-[18px] font-[700] mb-8 mx-5">
         Did you know?
@@ -56,7 +62,7 @@ const Facts = () => {
       </style>
 
       {/* ================= ROAD SECTION ================= */}
-      <div className="relative mt-32 px-5 sm:px-10">
+      <div className="relative mt-32 px-5 sm:px-10" data-aos="fade-down">
         {/* ROAD IMAGE */}
         <img
           src={road}

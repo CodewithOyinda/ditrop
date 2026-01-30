@@ -1,17 +1,25 @@
+import { useEffect } from "react";
 import ceo from "../../assets/Ditrop-CEO.png";
 import smile from "../../assets/Smile.png";
 import key from "../../assets/Key.png";
 import lady from "../../assets/Lady.png";
+// @ts-ignore
+import AOS from "aos";
+import 'aos/dist/aos.css';
 
 const Ceo = () => {
+    useEffect(() => {
+      AOS.init({ duration: 2000 });
+    }, []);
+
   return (
     <div className="bg-[#F5F8FF] py-20 px-5 sm:px-10 lg:px-20">
       
       {/* ================= STORY SECTION ================= */}
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12 items-start" >
         
         {/* LEFT */}
-        <div className="w-full lg:w-1/2">
+        <div className="w-full lg:w-1/2" data-aos="fade-down">
           <img
             src={ceo}
             alt="CEO"
@@ -34,7 +42,7 @@ const Ceo = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="w-full lg:w-1/2 space-y-6 text-[14px] sm:text-[16px] leading-relaxed">
+        <div className="w-full lg:w-1/2 space-y-6 text-[14px] sm:text-[16px] leading-relaxed" data-aos="fade-down">
           <p>
             Rather than accept these struggles as the norm, he saw an opportunity  to create a different kind of platform. One where living, moving, and earning would be more connected, more accessible, and far less complicated for everyone, not just a few.
           </p>
@@ -69,7 +77,7 @@ const Ceo = () => {
         <div className="flex flex-col lg:flex-row gap-12 items-start">
           
           {/* TEXT */}
-          <div className="w-full lg:w-1/2 space-y-6 text-[14px] sm:text-[16px] leading-relaxed">
+          <div className="w-full lg:w-1/2 space-y-6 text-[14px] sm:text-[16px] leading-relaxed" data-aos="fade-right">
             <p>
               Ditrop Inc., is a dynamic and diversified company that operates across four key areas: real estate, ride-sharing, technology services, and innovative earnings models. Each of these ventures is designed to address critical needs in today’s world, centred around the themes of ‘Living,’ ‘Transit,’ ‘Earning,’ and ‘Technology.’
             </p>
@@ -84,7 +92,7 @@ const Ceo = () => {
           </div>
 
           {/* IMAGES */}
-          <div className="w-full lg:w-1/2 flex justify-center gap-4">
+          <div className="w-full lg:w-1/2 flex justify-center gap-4" data-aos="fade-left">
             {[smile, key, lady].map((img, idx) => (
               <img
                 key={idx}

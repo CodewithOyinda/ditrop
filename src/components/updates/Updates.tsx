@@ -26,6 +26,7 @@ import covertwentyone from "../../assets/Cover-27.webp";
 import covertwentytwo from "../../assets/Cover-26.webp";
 import covertwentythree from "../../assets/Cover-25.webp";
 import covertwentyfour from "../../assets/Cover-22.webp";
+import { FaArrowDown } from "react-icons/fa";
 
 const Updates = () => {
   const [loadStep, setLoadStep] = useState(0);
@@ -234,17 +235,8 @@ const Updates = () => {
             </div>
           </div>
         </div>
-        {loadStep < 2 && (
-  <div className="flex justify-center mt-10 mb-10">
-    <button
-      onClick={() => setLoadStep((prev) => prev + 1)}
-      className="bg-white border border-black rounded-[20px] w-[120px] h-[40px] font-[500]"
-    >
-      Load More
-    </button>
-  </div>
-)}
-        {loadStep === 1 && (
+
+        {loadStep >= 1 && (
           <>
             <div className="sm:mx-15 mx-10 flex sm:flex-row flex-col gap-4 mt-10">
               <div>
@@ -347,7 +339,7 @@ const Updates = () => {
             </div>
           </>
         )}
-        {loadStep === 2 && (
+        {loadStep >= 2 && (
           <>
             <div className="sm:mx-15 mx-10 flex sm:flex-row flex-col gap-4 mt-10">
               <div>
@@ -358,7 +350,9 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    In today’s fast-paced digital landscape, SMEs need a strong online presence, effective branding, and a data-driven marketing...
+                    In today’s fast-paced digital landscape, SMEs need a strong
+                    online presence, effective branding, and a data-driven
+                    marketing...
                   </p>
                   <p className="pt-4 text-black">February 27, 2025</p>
                 </div>
@@ -372,7 +366,9 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    There’s excitement in the air here at Ditrop Inc. – but it’s not just the launch we’re thrilled about. What truly excites us is the differenc...
+                    There’s excitement in the air here at Ditrop Inc. – but it’s
+                    not just the launch we’re thrilled about. What truly excites
+                    us is the differenc...
                   </p>
                   <p className="pt-4 text-black">February 27, 2025</p>
                 </div>
@@ -386,7 +382,9 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    The title "CEO" used to be rare, prestigious, and associated with business giants. Today, it's thrown around so casually that it has lost...
+                    The title "CEO" used to be rare, prestigious, and associated
+                    with business giants. Today, it's thrown around so casually
+                    that it has lost...
                   </p>
                   <p className="pt-4 text-black">February 26, 2025</p>
                 </div>
@@ -402,7 +400,8 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    AI and automation are essential for small business survival and growth: They are no longer luxuries but necessities.
+                    AI and automation are essential for small business survival
+                    and growth: They are no longer luxuries but necessities.
                   </p>
                   <p className="pt-4 text-black">February 19, 2025</p>
                 </div>
@@ -416,7 +415,9 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    The future of retail is digital. Small and medium-sized enterprises (SMEs) that once relied solely on physical storefronts are now...
+                    The future of retail is digital. Small and medium-sized
+                    enterprises (SMEs) that once relied solely on physical
+                    storefronts are now...
                   </p>
                   <p className="pt-4 text-black">February 19, 2025</p>
                 </div>
@@ -430,7 +431,9 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    Small businesses are the backbone of global economies, yet many still struggle with inefficiencies, high operational costs, and th...
+                    Small businesses are the backbone of global economies, yet
+                    many still struggle with inefficiencies, high operational
+                    costs, and th...
                   </p>
                   <p className="pt-4 text-black">February 19, 2025</p>
                 </div>
@@ -438,7 +441,7 @@ const Updates = () => {
             </div>
           </>
         )}
-        {loadStep === 3 && (
+        {loadStep >= 3 && (
           <>
             <div className="sm:mx-15 mx-10 flex sm:flex-row flex-col gap-4 mt-10">
               <div>
@@ -449,7 +452,9 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    You may be wondering, “What is Ditrop Inc. all about?” Another service company? Not quite. Ditrop Inc. was birthed from a deep desire t...
+                    You may be wondering, “What is Ditrop Inc. all about?”
+                    Another service company? Not quite. Ditrop Inc. was birthed
+                    from a deep desire t...
                   </p>
                   <p className="pt-4 text-black">January 20, 2025</p>
                 </div>
@@ -463,7 +468,9 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    Starting a business is an exciting adventure full of potential. But as many entrepreneurs know, it’s not always smooth sailing.
+                    Starting a business is an exciting adventure full of
+                    potential. But as many entrepreneurs know, it’s not always
+                    smooth sailing.
                   </p>
                   <p className="pt-4 text-black">January 18, 2025</p>
                 </div>
@@ -477,23 +484,27 @@ const Updates = () => {
                 />
                 <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
                   <p className="font-[500]">
-                    James had a dream—one of creating a business that could make a difference in his community. But like many small and medium...
+                    James had a dream—one of creating a business that could make
+                    a difference in his community. But like many small and
+                    medium...
                   </p>
                   <p className="pt-4 text-black">January 14, 2025</p>
                 </div>
               </div>
             </div>
 
-            <div className="sm:mx-15 mx-10 flex sm:flex-row flex-col gap-4 mt-10">
+            <div className="sm:mx-15 mx-10 flex sm:flex-row flex-col gap-4 mt-10 mb-20">
               <div>
                 <img
                   src={covertwentytwo}
                   alt="coverimage"
                   className="rounded-t-[20px] h-[200px] w-[400px]"
                 />
-                <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
-                  <p className="font-[500]">
-                    A few years ago, small businesses were mostly seen as humble local shops places where you could walk in and buy what you...
+                <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500 w-[400px]">
+                  <p className="font-[500] ">
+                    A few years ago, small businesses were mostly seen as humble
+                    local shops places where you could walk in and buy what
+                    you...
                   </p>
                   <p className="pt-4 text-black">January 10, 2025</p>
                 </div>
@@ -505,7 +516,7 @@ const Updates = () => {
                   alt="coverimage"
                   className="rounded-t-[20px] h-[200px] w-[400px]"
                 />
-                <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
+                <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500 w-full">
                   <p className="pt-4 text-black">January 5, 2025</p>
                 </div>
               </div>
@@ -516,12 +527,22 @@ const Updates = () => {
                   alt="coverimage"
                   className="rounded-t-[20px] h-[200px] w-[400px]"
                 />
-                <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500">
+                <div className="bg-[#e6eeff] rounded-b-[20px] p-7 text-gray-500 w-full ">
                   <p className="pt-4 text-black">December 22, 2024</p>
                 </div>
               </div>
             </div>
           </>
+        )}
+        {loadStep < 3 && (
+          <div className="flex justify-center mt-10 mb-10">
+            <button
+              onClick={() => setLoadStep((prev) => prev + 1)}
+              className="bg-white border flex items-center justify-center gap-2 border-black rounded-[20px] w-[130px] h-[40px] font-[500]"
+            >
+              Load More <FaArrowDown size={13} />
+            </button>
+          </div>
         )}
       </div>
     </div>
