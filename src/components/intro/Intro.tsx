@@ -93,7 +93,7 @@ const Intro = () => {
             </div>
 
             {/* Description */}
-            <p className="text-[10px] sm:text-[20px] text-gray-500 pt-5 pb-5">
+            <p className="text-[10px] sm:text-[22px] text-gray-500 pt-5 pb-5">
               Manage your daily interactions and essential <br />
               services all in one place.
             </p>
