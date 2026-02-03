@@ -117,7 +117,7 @@ const Ditropcard = () => {
                   DitropSME offers affordable digital solutions to turn your
                   vision into reality.
                 </p>
-                <Button size="getstarted" className="mt-4" />
+                <Button size="getstarted" to="/ditropsme" className="mt-4" />
               </div>
             </div>
           </div>
