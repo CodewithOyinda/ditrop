@@ -2,7 +2,7 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 
 type ButtonProps = {
-  size?: "blue" | "white" | "download";
+  size?: "blue" | "white" | "download" | "getstarted";
   className?: string;
   children?: React.ReactNode;
   type?: "button" | "submit" | "reset";
@@ -16,6 +16,7 @@ const sizes = {
   blue: "sm:h-[38px] h-[32px] w-[110px] sm:w-[140px] sm:text-[14px] text-white bg-[#0a54ff] text-[10px] px-4",
   white: "sm:h-[30px] border-2 border-[#000000] h-[30px] w-[120px] sm:w-[140px] sm:text-[14px] bg-white text-[10px] px-4",
   download: "sm:h-[30px] border-2 border-[#000000] h-[30px] w-[150px] sm:w-[180px] sm:text-[14px] bg-white text-[10px] px-4",
+  getstarted: "sm:h-[38px] h-[32px] w-[110px] sm:w-[180px] sm:text-[14px] text-white bg-[#0a54ff] text-[10px] px-4",
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -26,8 +27,14 @@ const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   // Pick default text automatically
-  const defaultLabel =
-    size === "download" ? "Download Free App" : "Join Waitlist";
+  const labels = {
+    blue: "Join Waitlist",
+    white: "Join Waitlist",
+    download: "Download Free App",
+    getstarted: "Get Started Now",
+  };
+
+  const defaultLabel = labels[size];
 
   return (
     <button
@@ -35,9 +42,7 @@ const Button: React.FC<ButtonProps> = ({
       className={`${base} ${sizes[size]} ${className}`}
       {...rest}
     >
-      {/* Text */}
       {children ?? defaultLabel}
-
       <FaArrowRight />
     </button>
   );
